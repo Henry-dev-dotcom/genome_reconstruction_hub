@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Group 2 Genome Reconstruction Hub</title>
+  <meta name="description" content="A single-page learning website for understanding genome reconstruction of a novel emerging pathogen using Illumina, Nanopore, de novo assembly, and hybrid assembly." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#home">Skip to main content</a>
+  <div class="reading-progress" id="readingProgress"></div>
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="brand" href="#home" aria-label="Go to home">
+        <span class="brand-icon">DNA</span>
+        <span>Group 2 Genome Hub</span>
+      </a>
+
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">Dark</button>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#case">Case</a></li>
+        <li><a href="#modules">Lessons</a></li>
+        <li><a href="#assembly">Assembly</a></li>
+        <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#notes">Notes</a></li>
+        <li><a href="#present">Present</a></li>
+        <li><a href="#glossary">Glossary</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero section" id="home">
+      <div class="hero-content reveal">
+        <p class="eyebrow">Problem-Based Learning • Molecular Medicine</p>
+        <h1>Genome Reconstruction of a Novel Emerging Pathogen</h1>
+        <p class="hero-text">
+          Learn how scientists move from an unknown bacterial pathogen to a reconstructed genome
+          using Illumina short reads, Nanopore long reads, de novo assembly, hybrid assembly,
+          and careful reference comparison.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#pathway">Follow Learning Path</a>
+          <a class="btn btn-secondary" href="#quiz">Take Quiz</a>
+          <button class="btn btn-tertiary" id="printBtn" type="button">Print Notes</button>
+        </div>
+      </div>
+
+      <aside class="hero-card reveal">
+        <h3>Case Snapshot</h3>
+        <ul class="clean-list">
+          <li><strong>Location:</strong> Rural Ghana</li>
+          <li><strong>Problem:</strong> Severe febrile illness</li>
+          <li><strong>Organism:</strong> Previously unidentified bacterium</li>
+          <li><strong>Challenge:</strong> No close reference genome at first</li>
+          <li><strong>Goal:</strong> Reconstruct the complete genome</li>
+        </ul>
+      </aside>
+    </section>
+
+
+    <!-- LEARNING OUTCOMES -->
+    <section class="section compact-section" id="outcomes">
+      <div class="section-heading reveal">
+        <p class="eyebrow">What You Will Understand</p>
+        <h2>Learning Outcomes</h2>
+        <p>
+          By the end of the website, your group should be able to explain the case confidently,
+          interpret the assembly metrics, and justify the best genome reconstruction strategy.
+        </p>
+      </div>
+
+      <div class="outcome-grid">
+        <article class="outcome-card reveal">
+          <span>01</span>
+          <h3>Explain the Case</h3>
+          <p>Describe why an unknown pathogen requires whole-genome sequencing.</p>
+        </article>
+        <article class="outcome-card reveal">
+          <span>02</span>
+          <h3>Compare Technologies</h3>
+          <p>Differentiate Illumina short reads from Nanopore long reads.</p>
+        </article>
+        <article class="outcome-card reveal">
+          <span>03</span>
+          <h3>Interpret Metrics</h3>
+          <p>Use contigs, N50, and coverage to compare Assembly A and Assembly B.</p>
+        </article>
+        <article class="outcome-card reveal">
+          <span>04</span>
+          <h3>Defend the Strategy</h3>
+          <p>Recommend hybrid de novo assembly and explain reference bias.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CASE -->
+    <section class="section" id="case">
+      <div class="section-heading reveal">
+        <p class="eyebrow">The Scenario</p>
+        <h2>Understanding the Group 2 Case</h2>
+        <p>
+          The central issue is that normal diagnostic methods could not identify the pathogen.
+          The researchers therefore used whole-genome sequencing and genome assembly to
+          characterize the organism.
+        </p>
+      </div>
+
+      <div class="grid two-columns">
+        <article class="info-card reveal">
+          <h3>Sequencing Data</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Platform</th>
+                <th>Reads</th>
+                <th>Read Length</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Illumina</td>
+                <td>20 million</td>
+                <td>150 bp</td>
+              </tr>
+              <tr>
+                <td>Nanopore</td>
+                <td>250,000</td>
+                <td>12–20 kb</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="info-card reveal">
+          <h3>Main Scientific Challenge</h3>
+          <p>
+            At first, database searches found no closely related reference genome. Because of this,
+            the team had to reconstruct the genome from the sequencing reads themselves using
+            <strong>de novo assembly</strong>.
+          </p>
+          <p>
+            A related species genome with 96% similarity was later discovered. This reference can help
+            with comparison and annotation, but it should not replace the de novo assembly because it
+            may introduce reference bias.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PATHWAY -->
+    <section class="section light-section" id="pathway">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Learning Pathway</p>
+        <h2>How to Study This Topic</h2>
+        <p>
+          Follow these steps in order. Each step builds the foundation for understanding the next one.
+        </p>
+      </div>
+
+      <div class="pathway">
+        <article class="path-step reveal">
+          <span>1</span>
+          <h3>Understand the Case</h3>
+          <p>Know the disease setting, why diagnosis failed, and why sequencing was needed.</p>
+        </article>
+
+        <article class="path-step reveal">
+          <span>2</span>
+          <h3>Learn the Platforms</h3>
+          <p>Compare Illumina short reads with Nanopore long reads.</p>
+        </article>
+
+        <article class="path-step reveal">
+          <span>3</span>
+          <h3>Study De Novo Assembly</h3>
+          <p>Understand how a genome is reconstructed without a reference.</p>
+        </article>
+
+        <article class="path-step reveal">
+          <span>4</span>
+          <h3>Interpret Metrics</h3>
+          <p>Use contigs, N50, and coverage to judge assembly quality.</p>
+        </article>
+
+        <article class="path-step reveal">
+          <span>5</span>
+          <h3>Evaluate Hybrid Assembly</h3>
+          <p>Explain why Assembly B improved after adding Nanopore reads.</p>
+        </article>
+
+        <article class="path-step reveal">
+          <span>6</span>
+          <h3>Make a Recommendation</h3>
+          <p>Choose the best strategy and explain its clinical/public health value.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MODULES -->
+    <section class="section" id="modules">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Expanded Lessons</p>
+        <h2>Learning Modules</h2>
+        <p>Click each module to read the full explanation.</p>
+      </div>
+
+      <div class="accordion">
+        <article class="accordion-item reveal">
+          <button class="accordion-header" type="button" aria-expanded="false">1. Whole-Genome Sequencing</button>
+          <div class="accordion-body">
+            <p>
+              Whole-genome sequencing, or WGS, is the process of reading the DNA sequence of an
+              organism across its whole genome. For an unknown pathogen, WGS is powerful because it
+              does not depend only on one expected target. It gives researchers broad information about
+              identity, gene content, virulence factors, resistance genes, and evolutionary relationship.
+            </p>
+            <p>
+              In this case, conventional diagnostics failed because the organism was not easily
+              recognized by routine laboratory methods. WGS allows researchers to move beyond
+              traditional testing and examine the organism at genome level.
+            </p>
+            <div class="takeaway">Key takeaway: WGS is used because the pathogen is unknown and needs genome-level characterization.</div>
+          </div>
+        </article>
+
+        <article class="accordion-item reveal">
+          <button class="accordion-header" type="button" aria-expanded="false">2. Illumina Short-Read Sequencing</button>
+          <div class="accordion-body">
+            <p>
+              Illumina sequencing produces millions of short reads. In the case, it produced 20 million
+              reads of 150 bp. The major strength of Illumina is high base-level accuracy and high
+              depth of coverage. This makes it useful for polishing assemblies and identifying small
+              sequence differences.
+            </p>
+            <p>
+              However, Illumina reads are short. When the genome contains repeats, insertion sequences,
+              mobile elements, or complex regions, short reads may not be able to show how distant
+              regions connect. This is one reason Assembly A became fragmented.
+            </p>
+            <div class="takeaway">Simple picture: Illumina gives many tiny but accurate puzzle pieces.</div>
+          </div>
+        </article>
+
+        <article class="accordion-item reveal">
+          <button class="accordion-header" type="button" aria-expanded="false">3. Nanopore Long-Read Sequencing</button>
+          <div class="accordion-body">
+            <p>
+              Nanopore sequencing produces long reads. In the case, the Nanopore reads were 12–20 kb,
+              which is far longer than the 150 bp Illumina reads. These long reads can span repeated
+              regions and connect contigs that short reads cannot join.
+            </p>
+            <p>
+              Nanopore reads may have higher raw error rates than Illumina reads, but their length makes
+              them extremely useful for improving assembly continuity. When combined with Illumina data,
+              the long reads provide structure while the short reads help correct errors.
+            </p>
+            <div class="takeaway">Simple picture: Nanopore gives larger puzzle pieces that show how sections connect.</div>
+          </div>
+        </article>
+
+        <article class="accordion-item reveal">
+          <button class="accordion-header" type="button" aria-expanded="false">4. De Novo Genome Assembly</button>
+          <div class="accordion-body">
+            <p>
+              De novo assembly means reconstructing a genome without using a reference genome. This is
+              the correct starting point when the organism is novel and no close reference is available.
+              The assembler looks for overlaps between reads and uses those overlaps to build longer
+              sequences called contigs.
+            </p>
+            <p>
+              De novo assembly is useful because it allows the new organism to reveal its own genome
+              structure. It can detect unique genes, insertions, and genomic regions that may not exist in
+              a known reference. Its limitation is that it can become fragmented, especially when only
+              short reads are available.
+            </p>
+            <div class="takeaway">Key takeaway: De novo assembly builds the genome from scratch.</div>
+          </div>
+        </article>
+
+        <article class="accordion-item reveal">
+          <button class="accordion-header" type="button" aria-expanded="false">5. Assembly Metrics: Contigs, N50, and Coverage</button>
+          <div class="accordion-body">
+            <p>
+              A contig is a continuous DNA sequence produced by assembly. A high number of contigs
+              usually means the genome is fragmented. N50 is a measure of assembly continuity. A higher
+              N50 means that the assembled sequences are longer and more connected. Coverage describes
+              how much of the genome is represented by the sequencing data or assembly.
+            </p>
+            <p>
+              Assembly A had 375 contigs, N50 of 40 kb, and 95% coverage. This suggests an incomplete
+              and fragmented assembly. Assembly B had 15 contigs, N50 of 2.3 Mb, and 99.7% coverage,
+              showing major improvement in continuity and completeness.
+            </p>
+            <div class="takeaway">Best rule: fewer contigs + higher N50 + higher coverage = better assembly.</div>
+          </div>
+        </article>
+
+        <article class="accordion-item reveal">
+          <button class="accordion-header" type="button" aria-expanded="false">6. Hybrid Assembly</button>
+          <div class="accordion-body">
+            <p>
+              Hybrid assembly combines short-read and long-read sequencing data. In this case, Illumina
+              reads provide accuracy, while Nanopore reads provide long-range connections. The result is
+              a much better assembly than using Illumina alone.
+            </p>
+            <p>
+              This explains the improvement from Assembly A to Assembly B. The number of contigs dropped
+              from 375 to 15, N50 increased from 40 kb to 2.3 Mb, and coverage improved from 95% to 99.7%.
+            </p>
+            <div class="takeaway">Key takeaway: Hybrid assembly uses the strength of both sequencing platforms.</div>
+          </div>
+        </article>
+
+        <article class="accordion-item reveal">
+          <button class="accordion-header" type="button" aria-expanded="false">7. Reference Mapping and Reference Bias</button>
+          <div class="accordion-body">
+            <p>
+              Reference mapping means aligning sequencing reads to an existing genome. It can be useful
+              when a closely related reference exists because it helps with comparison and variant
+              detection. However, it can be risky for a novel pathogen.
+            </p>
+            <p>
+              Reference bias happens when the new genome is forced to fit the reference genome too closely.
+              This may hide genes, insertions, rearrangements, or unique regions that are present in the
+              new pathogen but absent from the reference.
+            </p>
+            <div class="takeaway">Use the 96% similar genome for comparison, not as the primary reconstruction method.</div>
+          </div>
+        </article>
+
+        <article class="accordion-item reveal">
+          <button class="accordion-header" type="button" aria-expanded="false">8. Clinical and Public Health Importance</button>
+          <div class="accordion-body">
+            <p>
+              Genome reconstruction is important because it can help identify the pathogen, discover
+              virulence genes, detect antimicrobial resistance genes, support diagnostic test development,
+              and guide surveillance. For an emerging infection, genome data can help public health teams
+              understand risk and respond more effectively.
+            </p>
+            <p>
+              In molecular medicine, this connects laboratory genomics with patient care, epidemiology,
+              diagnosis, treatment planning, and outbreak response.
+            </p>
+            <div class="takeaway">Genome reconstruction turns unknown infection into actionable biological information.</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ASSEMBLY COMPARISON -->
+    <section class="section light-section" id="assembly">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Assembly Metrics</p>
+        <h2>Assembly A vs Assembly B</h2>
+        <p>
+          The case becomes easy when you understand that Assembly B is more complete because long reads
+          improved continuity.
+        </p>
+      </div>
+
+      <div class="comparison-table reveal">
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Assembly A</th>
+              <th>Assembly B</th>
+              <th>Interpretation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Contigs</td>
+              <td class="bad">375</td>
+              <td class="good">15</td>
+              <td>Assembly B is much less fragmented.</td>
+            </tr>
+            <tr>
+              <td>N50</td>
+              <td class="bad">40 kb</td>
+              <td class="good">2.3 Mb</td>
+              <td>Assembly B has longer continuous sequences.</td>
+            </tr>
+            <tr>
+              <td>Coverage</td>
+              <td class="bad">95%</td>
+              <td class="good">99.7%</td>
+              <td>Assembly B represents almost the entire genome.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="metric-cards">
+        <article class="metric-card reveal">
+          <h3>Why Assembly A is Weak</h3>
+          <p>
+            It is fragmented, has many contigs, has low N50, and does not fully cover the genome.
+            It probably struggled because short reads could not connect repeated or complex regions.
+          </p>
+        </article>
+
+        <article class="metric-card reveal">
+          <h3>Why Assembly B is Stronger</h3>
+          <p>
+            Nanopore long reads helped bridge gaps and join contigs. This increased continuity and made
+            the genome reconstruction more complete.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCEDURE -->
+    <section class="section" id="procedure">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Procedure</p>
+        <h2>Genome Reconstruction Workflow</h2>
+        <p>
+          This is the practical procedure researchers would follow in the case scenario.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <span>01</span>
+          <h3>Collect and Culture the Isolate</h3>
+          <p>Obtain the bacterial isolate from patients with severe febrile illness.</p>
+        </article>
+
+        <article class="timeline-item reveal">
+          <span>02</span>
+          <h3>Extract High-Quality DNA</h3>
+          <p>Extract DNA carefully, especially because long intact DNA improves Nanopore sequencing.</p>
+        </article>
+
+        <article class="timeline-item reveal">
+          <span>03</span>
+          <h3>Generate Reads</h3>
+          <p>Sequence with Illumina for accurate short reads and Nanopore for long reads.</p>
+        </article>
+
+        <article class="timeline-item reveal">
+          <span>04</span>
+          <h3>Perform Quality Control</h3>
+          <p>Remove poor-quality reads, adapters, and possible contaminants.</p>
+        </article>
+
+        <article class="timeline-item reveal">
+          <span>05</span>
+          <h3>Run De Novo Assembly</h3>
+          <p>Build the first genome assembly without a reference because the pathogen is novel.</p>
+        </article>
+
+        <article class="timeline-item reveal">
+          <span>06</span>
+          <h3>Improve with Hybrid Assembly</h3>
+          <p>Combine short and long reads to reduce contigs and increase N50 and coverage.</p>
+        </article>
+
+        <article class="timeline-item reveal">
+          <span>07</span>
+          <h3>Assess Assembly Quality</h3>
+          <p>Check contigs, N50, coverage, completeness, contamination, and possible errors.</p>
+        </article>
+
+        <article class="timeline-item reveal">
+          <span>08</span>
+          <h3>Annotate and Interpret</h3>
+          <p>Identify genes, virulence factors, resistance markers, and taxonomic relationships.</p>
+        </article>
+
+        <article class="timeline-item reveal">
+          <span>09</span>
+          <h3>Compare with Reference</h3>
+          <p>Use the 96% similar genome carefully for comparison and validation.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MIND MAP -->
+    <section class="section light-section" id="mindmap">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Concept Map</p>
+        <h2>Mind Map of the Case</h2>
+        <p>This shows the logic of the whole topic from the clinical problem to public health use.</p>
+      </div>
+
+      <div class="mind-map reveal">
+        <div class="mind-node main-node">Novel Bacterial Pathogen in Ghana</div>
+        <div class="mind-row">
+          <div class="mind-node">Conventional Diagnostics Failed</div>
+          <div class="mind-node">WGS Needed</div>
+          <div class="mind-node">Genome Reconstruction Goal</div>
+        </div>
+        <div class="mind-row">
+          <div class="mind-node">Illumina Short Reads<br><small>Accurate but short</small></div>
+          <div class="mind-node">De Novo Assembly<br><small>No reference needed</small></div>
+          <div class="mind-node">Assembly A<br><small>375 contigs, 40 kb N50</small></div>
+        </div>
+        <div class="mind-row">
+          <div class="mind-node">Nanopore Long Reads<br><small>Bridge repeats</small></div>
+          <div class="mind-node">Hybrid Assembly<br><small>Short + long reads</small></div>
+          <div class="mind-node">Assembly B<br><small>15 contigs, 2.3 Mb N50</small></div>
+        </div>
+        <div class="mind-row">
+          <div class="mind-node">96% Similar Reference Found</div>
+          <div class="mind-node">Compare Carefully</div>
+          <div class="mind-node">Avoid Reference Bias</div>
+        </div>
+        <div class="mind-node final-node">Diagnosis • Surveillance • Public Health Response • Molecular Medicine</div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="section" id="quiz">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Practice</p>
+        <h2>Interactive Quiz Centre</h2>
+        <p>
+          Choose a level, answer the questions, then submit to see your score, corrections,
+          and short explanations.
+        </p>
+      </div>
+
+      <div class="quiz-dashboard reveal">
+        <div class="quiz-tabs" role="tablist" aria-label="Quiz levels">
+          <button class="quiz-tab active" type="button" data-level="beginner">Beginner</button>
+          <button class="quiz-tab" type="button" data-level="intermediate">Intermediate</button>
+          <button class="quiz-tab" type="button" data-level="advanced">Advanced</button>
+        </div>
+
+        <div class="quiz-status">
+          <div>
+            <span class="status-label">Current Level</span>
+            <strong id="currentLevel">Beginner</strong>
+          </div>
+          <div>
+            <span class="status-label">Questions</span>
+            <strong id="questionCount">0</strong>
+          </div>
+          <div>
+            <span class="status-label">Last Score</span>
+            <strong id="lastScore">Not attempted</strong>
+          </div>
+        </div>
+      </div>
+
+      <form class="quiz-box reveal" id="quizForm">
+        <div id="quizQuestions"></div>
+
+        <div class="quiz-actions">
+          <button class="btn btn-primary" type="submit">Submit Quiz</button>
+          <button class="btn btn-secondary" id="resetQuiz" type="button">Reset This Level</button>
+        </div>
+
+        <div class="score-panel" id="scorePanel" aria-live="polite">
+          <p class="quiz-result" id="quizResult"></p>
+          <p id="quizAdvice"></p>
+        </div>
+      </form>
+
+      <div class="short-answer-bank reveal">
+        <div class="section-heading small-heading">
+          <p class="eyebrow">Presentation Practice</p>
+          <h2>Short-Answer Questions</h2>
+          <p>Use these to practise explaining the topic in your own words.</p>
+        </div>
+
+        <div class="qa-grid">
+          <article class="qa-card">
+            <h3>1. Why is de novo assembly important in this case?</h3>
+            <p>
+              Because the pathogen is novel and no close reference genome was available at first,
+              the genome had to be reconstructed from the sequencing reads themselves.
+            </p>
+          </article>
+
+          <article class="qa-card">
+            <h3>2. Why did Assembly A become fragmented?</h3>
+            <p>
+              Assembly A likely relied heavily on short reads, which may fail to span repetitive
+              or complex genomic regions.
+            </p>
+          </article>
+
+          <article class="qa-card">
+            <h3>3. Why did Nanopore reads improve Assembly B?</h3>
+            <p>
+              Nanopore reads are long enough to bridge gaps, connect contigs, and resolve repeat-rich
+              regions, improving continuity and coverage.
+            </p>
+          </article>
+
+          <article class="qa-card">
+            <h3>4. What is reference bias?</h3>
+            <p>
+              Reference bias occurs when sequencing data from a new organism is forced to fit an
+              existing reference, causing unique regions to be missed or misinterpreted.
+            </p>
+          </article>
+
+          <article class="qa-card">
+            <h3>5. What strategy is best?</h3>
+            <p>
+              Hybrid de novo assembly is best, followed by polishing, quality assessment, annotation,
+              and careful comparison with the 96% similar reference genome.
+            </p>
+          </article>
+
+          <article class="qa-card">
+            <h3>6. Why does this matter clinically?</h3>
+            <p>
+              Genome reconstruction helps identify the pathogen, understand its genes, support
+              diagnosis, guide surveillance, and inform public health response.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLASHCARDS -->
+    <section class="section light-section" id="flashcards">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Revision</p>
+        <h2>Flashcards</h2>
+        <p>Click each card to flip it.</p>
+      </div>
+
+      <div class="flashcard-grid">
+        <div class="flashcard reveal">
+          <div class="front">Contig</div>
+          <div class="back">A continuous assembled DNA sequence made from overlapping reads.</div>
+        </div>
+
+        <div class="flashcard reveal">
+          <div class="front">N50</div>
+          <div class="back">A measure of assembly continuity. Higher N50 means longer assembled sequences.</div>
+        </div>
+
+        <div class="flashcard reveal">
+          <div class="front">Coverage</div>
+          <div class="back">How much of the genome is represented by sequencing reads or assembly.</div>
+        </div>
+
+        <div class="flashcard reveal">
+          <div class="front">De Novo Assembly</div>
+          <div class="back">Reconstructing a genome without using a reference genome.</div>
+        </div>
+
+        <div class="flashcard reveal">
+          <div class="front">Hybrid Assembly</div>
+          <div class="back">Combining short reads and long reads to improve genome reconstruction.</div>
+        </div>
+
+        <div class="flashcard reveal">
+          <div class="front">Reference Bias</div>
+          <div class="back">Errors caused by forcing new data to fit an existing reference genome.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCUSSION -->
+    <section class="section" id="discussion">
+      <div class="section-heading reveal">
+        <p class="eyebrow">PBL Questions</p>
+        <h2>Guided Discussion Answers</h2>
+        <p>Use these to prepare for group discussion and presentation defence.</p>
+      </div>
+
+      <div class="qa-grid">
+        <article class="qa-card reveal">
+          <h3>What do the assembly metrics indicate?</h3>
+          <p>They indicate the quality and completeness of the genome assembly. Assembly A is fragmented, while Assembly B is much more complete.</p>
+        </article>
+
+        <article class="qa-card reveal">
+          <h3>Is Assembly A complete?</h3>
+          <p>No. It has 375 contigs, low N50, and 95% coverage, showing that some regions are missing or poorly assembled.</p>
+        </article>
+
+        <article class="qa-card reveal">
+          <h3>Why was Assembly A fragmented?</h3>
+          <p>Likely because short reads could not resolve repetitive or complex genomic regions, and no close reference was available.</p>
+        </article>
+
+        <article class="qa-card reveal">
+          <h3>How did long reads help?</h3>
+          <p>Nanopore long reads bridged gaps, connected contigs, resolved repeats, and improved assembly continuity.</p>
+        </article>
+
+        <article class="qa-card reveal">
+          <h3>How does reference mapping differ?</h3>
+          <p>Reference mapping aligns reads to a known genome, while de novo assembly builds the genome without a reference.</p>
+        </article>
+
+        <article class="qa-card reveal">
+          <h3>Which strategy is recommended?</h3>
+          <p>Hybrid de novo assembly is recommended, followed by careful comparison with the 96% similar reference genome.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CASE CHALLENGE -->
+    <section class="section" id="challenge">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Case Challenge</p>
+        <h2>Apply What You Have Learned</h2>
+        <p>
+          This section helps your group move from memorising definitions to defending your
+          recommended genome reconstruction strategy.
+        </p>
+      </div>
+
+      <div class="challenge-card reveal">
+        <h3>Scenario</h3>
+        <p>
+          Your team has Assembly A from Illumina reads only. It has 375 contigs, an N50 of 40 kb,
+          and 95% coverage. Nanopore long reads are then added and Assembly B improves to 15 contigs,
+          an N50 of 2.3 Mb, and 99.7% coverage. Later, a related species genome with 96% similarity
+          is discovered.
+        </p>
+
+        <div class="challenge-grid">
+          <div>
+            <h4>Your Decision</h4>
+            <p>
+              Recommend <strong>hybrid de novo assembly</strong> as the primary strategy because the
+              pathogen is novel and long reads clearly improved assembly quality.
+            </p>
+          </div>
+
+          <div>
+            <h4>How to Use the Reference</h4>
+            <p>
+              Use the 96% similar genome for comparison, annotation support, and validation, but avoid
+              using it as the only guide because unique pathogen regions may be missed.
+            </p>
+          </div>
+
+          <div>
+            <h4>How to Defend It</h4>
+            <p>
+              State that Assembly B has fewer contigs, higher N50, and higher coverage, meaning it is
+              more complete and more reliable for downstream interpretation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section class="section light-section" id="resources">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Curated Resources</p>
+        <h2>Reading Library for Group 2</h2>
+        <p>
+          These resources are organised from beginner to advanced so your group can study the topic
+          without getting lost. Each card has a purpose and one key takeaway.
+        </p>
+      </div>
+
+      <div class="resource-grid enhanced-resources">
+        <article class="resource-card reveal">
+          <span class="resource-level beginner">Beginner</span>
+          <h3>CDC: Whole-Genome Sequencing for Outbreak Detection</h3>
+          <p>
+            Shows how WGS gives a detailed DNA fingerprint and helps public health teams detect
+            outbreaks that older methods may miss.
+          </p>
+          <p class="key-point"><strong>Key point:</strong> WGS links laboratory genomics with public health action.</p>
+          <a class="resource-link" href="https://www.cdc.gov/advanced-molecular-detection/about/detecting-outbreaks.html" target="_blank" rel="noopener">Open resource</a>
+        </article>
+
+        <article class="resource-card reveal">
+          <span class="resource-level beginner">Beginner</span>
+          <h3>Illumina: Sequencing by Synthesis</h3>
+          <p>
+            Explains how Illumina reads DNA base by base using fluorescent reversible terminators
+            and massively parallel sequencing.
+          </p>
+          <p class="key-point"><strong>Key point:</strong> Illumina is strong for accurate short-read data.</p>
+          <a class="resource-link" href="https://www.illumina.com/science/technology/next-generation-sequencing/sequencing-technology.html" target="_blank" rel="noopener">Open resource</a>
+        </article>
+
+        <article class="resource-card reveal">
+          <span class="resource-level beginner">Beginner</span>
+          <h3>Oxford Nanopore: How Nanopore Sequencing Works</h3>
+          <p>
+            Explains real-time sequencing, nanopores, direct DNA/RNA sequencing, and why long reads
+            help resolve repetitive and difficult regions.
+          </p>
+          <p class="key-point"><strong>Key point:</strong> Nanopore reads help connect regions that short reads cannot.</p>
+          <a class="resource-link" href="https://nanoporetech.com/platform/technology" target="_blank" rel="noopener">Open resource</a>
+        </article>
+
+        <article class="resource-card reveal">
+          <span class="resource-level intermediate">Intermediate</span>
+          <h3>fastp: FASTQ Quality Control</h3>
+          <p>
+            A paper on preprocessing sequencing reads, including quality control, adapter trimming,
+            quality filtering, and read pruning.
+          </p>
+          <p class="key-point"><strong>Key point:</strong> Good assemblies begin with clean reads.</p>
+          <a class="resource-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6129281/" target="_blank" rel="noopener">Open resource</a>
+        </article>
+
+        <article class="resource-card reveal">
+          <span class="resource-level intermediate">Intermediate</span>
+          <h3>QUAST: Assembly Quality Assessment</h3>
+          <p>
+            Explains how genome assemblies can be evaluated using metrics and reports, with or
+            without a reference genome.
+          </p>
+          <p class="key-point"><strong>Key point:</strong> Contigs, N50, and coverage help judge assembly quality.</p>
+          <a class="resource-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3624806/" target="_blank" rel="noopener">Open resource</a>
+        </article>
+
+        <article class="resource-card reveal">
+          <span class="resource-level intermediate">Intermediate</span>
+          <h3>Unicycler: Hybrid Bacterial Genome Assembly</h3>
+          <p>
+            Shows why accurate short reads and structurally useful long reads can be combined to
+            produce better bacterial genome assemblies.
+          </p>
+          <p class="key-point"><strong>Key point:</strong> Hybrid assembly directly supports the logic of Assembly B.</p>
+          <a class="resource-link" href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005595" target="_blank" rel="noopener">Open resource</a>
+        </article>
+
+        <article class="resource-card reveal">
+          <span class="resource-level advanced">Advanced</span>
+          <h3>NCBI PGAP: Prokaryotic Genome Annotation</h3>
+          <p>
+            Explains how bacterial and archaeal genomes can be annotated to identify protein-coding
+            genes, RNAs, pseudogenes, repeats, transposons, and mobile elements.
+          </p>
+          <p class="key-point"><strong>Key point:</strong> Assembly is not the end; annotation gives biological meaning.</p>
+          <a class="resource-link" href="https://www.ncbi.nlm.nih.gov/refseq/annotation_prok/" target="_blank" rel="noopener">Open resource</a>
+        </article>
+
+        <article class="resource-card reveal">
+          <span class="resource-level advanced">Advanced</span>
+          <h3>GTDB-Tk: Genome-Based Taxonomic Classification</h3>
+          <p>
+            Explains classification of bacterial and archaeal genomes using the Genome Taxonomy Database.
+          </p>
+          <p class="key-point"><strong>Key point:</strong> After reconstruction, the genome must be placed taxonomically.</p>
+          <a class="resource-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7703759/" target="_blank" rel="noopener">Open resource</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- REFERENCES -->
+    <section class="section" id="references">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Academic Support</p>
+        <h2>Reference Notes for Your Group Note</h2>
+        <p>
+          Use these short reference notes when writing your group note or defending your presentation.
+        </p>
+      </div>
+
+      <div class="reference-list reveal">
+        <article>
+          <h3>Whole-genome sequencing</h3>
+          <p>
+            WGS is useful in outbreak detection because it gives a more detailed DNA fingerprint than
+            older typing methods and can help identify related cases more precisely.
+          </p>
+        </article>
+
+        <article>
+          <h3>Illumina sequencing</h3>
+          <p>
+            Illumina sequencing by synthesis detects bases as they are incorporated into growing DNA
+            strands in a massively parallel system. It is useful for accurate short-read data.
+          </p>
+        </article>
+
+        <article>
+          <h3>Nanopore sequencing</h3>
+          <p>
+            Nanopore sequencing directly reads DNA or RNA by detecting current changes as molecules pass
+            through nanopores. Its long reads are valuable for difficult and repetitive genome regions.
+          </p>
+        </article>
+
+        <article>
+          <h3>Hybrid assembly</h3>
+          <p>
+            Hybrid assembly combines accurate short reads with long reads that resolve genome structure.
+            This explains the improvement from Assembly A to Assembly B in the case scenario.
+          </p>
+        </article>
+
+        <article>
+          <h3>Assembly assessment</h3>
+          <p>
+            Assembly quality should be checked using metrics such as number of contigs, N50, coverage,
+            completeness, and possible contamination or misassembly.
+          </p>
+        </article>
+
+        <article>
+          <h3>Annotation and classification</h3>
+          <p>
+            After assembly, the genome should be annotated to identify genes and classified to understand
+            its relationship to known bacteria.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- STUDY NOTES -->
+    <section class="section light-section" id="notes">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Study Pack</p>
+        <h2>Downloadable Study Notes</h2>
+        <p>
+          Use this section when your group wants to revise quickly or generate a formal note from
+          the website content.
+        </p>
+      </div>
+
+      <div class="download-grid">
+        <article class="download-card reveal">
+          <h3>Complete Study Notes</h3>
+          <p>
+            A structured note covering the case background, sequencing platforms, de novo assembly,
+            hybrid assembly, assembly metrics, reference mapping, and public health relevance.
+          </p>
+          <a class="resource-link" href="study-notes.md" download>Download notes</a>
+        </article>
+
+        <article class="download-card reveal">
+          <h3>Presentation Defence Guide</h3>
+          <p>
+            A short guide that helps your group answer likely questions during the PBL presentation
+            and explain why hybrid de novo assembly is the best strategy.
+          </p>
+          <a class="resource-link" href="presentation-guide.md" download>Download guide</a>
+        </article>
+
+        <article class="download-card reveal">
+          <h3>Print Website Notes</h3>
+          <p>
+            Use the print button at the top of the website to save the page as a PDF or print it as
+            a handout for group reading.
+          </p>
+          <button class="btn btn-primary" type="button" onclick="window.print()">Print notes</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- VISUAL WORKFLOW -->
+    <section class="section" id="workflow">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Visual Workflow</p>
+        <h2>From Patient Sample to Genome Interpretation</h2>
+        <p>
+          This workflow shows the scientific procedure in a simple visual order.
+        </p>
+      </div>
+
+      <div class="workflow-diagram reveal">
+        <div class="workflow-step">
+          <span>1</span>
+          <h3>Patient Samples</h3>
+          <p>Patients present with severe febrile illness.</p>
+        </div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-step">
+          <span>2</span>
+          <h3>Unknown Bacterium</h3>
+          <p>Conventional diagnostics fail to identify it.</p>
+        </div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-step">
+          <span>3</span>
+          <h3>WGS</h3>
+          <p>Illumina and Nanopore reads are generated.</p>
+        </div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-step">
+          <span>4</span>
+          <h3>De Novo Assembly</h3>
+          <p>Assembly A is produced but fragmented.</p>
+        </div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-step">
+          <span>5</span>
+          <h3>Hybrid Assembly</h3>
+          <p>Nanopore long reads improve continuity.</p>
+        </div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-step">
+          <span>6</span>
+          <h3>Interpretation</h3>
+          <p>Genome is assessed, annotated, and compared.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW TO PRESENT -->
+    <section class="section light-section" id="present">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Class Presentation</p>
+        <h2>How to Present This Case Clearly</h2>
+        <p>
+          Use this 15–20 minute flow to explain the topic without sounding scattered.
+        </p>
+      </div>
+
+      <div class="presentation-plan reveal">
+        <table>
+          <thead>
+            <tr>
+              <th>Section</th>
+              <th>Time</th>
+              <th>What to Say</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Case Summary</td>
+              <td>2 minutes</td>
+              <td>Unknown bacterial pathogen in Ghana; routine diagnostics failed.</td>
+            </tr>
+            <tr>
+              <td>Learning Objectives</td>
+              <td>2 minutes</td>
+              <td>Explain sequencing platforms, assembly metrics, and recommended strategy.</td>
+            </tr>
+            <tr>
+              <td>Key Concepts</td>
+              <td>5 minutes</td>
+              <td>WGS, Illumina, Nanopore, de novo assembly, hybrid assembly, reference bias.</td>
+            </tr>
+            <tr>
+              <td>Application to Case</td>
+              <td>5 minutes</td>
+              <td>Compare Assembly A and Assembly B using contigs, N50, and coverage.</td>
+            </tr>
+            <tr>
+              <td>Critical Evaluation</td>
+              <td>3 minutes</td>
+              <td>Discuss why the 96% reference genome is useful but should be used carefully.</td>
+            </tr>
+            <tr>
+              <td>Conclusion</td>
+              <td>2 minutes</td>
+              <td>Recommend hybrid de novo assembly followed by annotation and comparison.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="speaker-script reveal">
+        <h3>Simple Final Speaking Point</h3>
+        <p>
+          “Because this is a novel pathogen with no close reference genome at the beginning, the best
+          strategy is hybrid de novo assembly. Illumina reads provide accuracy, Nanopore reads improve
+          continuity, and the later 96% similar reference genome should only be used carefully for
+          comparison and validation.”
+        </p>
+      </div>
+    </section>
+
+    <!-- GLOSSARY -->
+    <section class="section" id="glossary">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Quick Search</p>
+        <h2>Glossary Search</h2>
+        <p>
+          Search the key terms you and your mates need to understand before the presentation.
+        </p>
+      </div>
+
+      <div class="glossary-tool reveal">
+        <input id="glossarySearch" type="search" placeholder="Search terms like N50, contig, hybrid assembly..." aria-label="Search glossary terms" />
+
+        <div class="glossary-grid" id="glossaryGrid">
+          <article class="glossary-card" data-term="whole-genome sequencing wgs">
+            <h3>Whole-Genome Sequencing</h3>
+            <p>Reading genetic information across the whole genome of an organism.</p>
+          </article>
+          <article class="glossary-card" data-term="illumina short reads">
+            <h3>Illumina</h3>
+            <p>A short-read sequencing platform known for producing many accurate reads.</p>
+          </article>
+          <article class="glossary-card" data-term="nanopore long reads">
+            <h3>Nanopore</h3>
+            <p>A long-read sequencing platform useful for connecting difficult genome regions.</p>
+          </article>
+          <article class="glossary-card" data-term="de novo assembly">
+            <h3>De Novo Assembly</h3>
+            <p>Reconstructing a genome without using a reference genome.</p>
+          </article>
+          <article class="glossary-card" data-term="contig contigs">
+            <h3>Contig</h3>
+            <p>A continuous DNA sequence assembled from overlapping reads.</p>
+          </article>
+          <article class="glossary-card" data-term="n50 assembly metric">
+            <h3>N50</h3>
+            <p>A measure of assembly continuity. Higher N50 means longer assembled sequences.</p>
+          </article>
+          <article class="glossary-card" data-term="coverage depth">
+            <h3>Coverage</h3>
+            <p>How much of the genome is represented by sequencing reads or assembly.</p>
+          </article>
+          <article class="glossary-card" data-term="hybrid assembly">
+            <h3>Hybrid Assembly</h3>
+            <p>Combining short and long reads to produce a better genome assembly.</p>
+          </article>
+          <article class="glossary-card" data-term="reference mapping">
+            <h3>Reference Mapping</h3>
+            <p>Aligning reads to an existing known genome.</p>
+          </article>
+          <article class="glossary-card" data-term="reference bias">
+            <h3>Reference Bias</h3>
+            <p>Error or distortion caused by forcing new data to fit an existing reference.</p>
+          </article>
+          <article class="glossary-card" data-term="annotation genome genes">
+            <h3>Genome Annotation</h3>
+            <p>Identifying genes and functional regions in an assembled genome.</p>
+          </article>
+          <article class="glossary-card" data-term="taxonomic classification taxonomy">
+            <h3>Taxonomic Classification</h3>
+            <p>Placing the organism within a biological group based on genome evidence.</p>
+          </article>
+        </div>
+
+        <p class="no-results" id="noGlossaryResults">No matching term found.</p>
+      </div>
+    </section>
+
+
+
+    <!-- FINAL SUMMARY -->
+    <section class="section light-section" id="final-summary">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Final Revision</p>
+        <h2>One-Minute Summary</h2>
+        <p>
+          This is the shortest version of the topic your group should remember before presentation.
+        </p>
+      </div>
+
+      <div class="final-summary-card reveal">
+        <p>
+          A previously unidentified bacterial pathogen caused severe febrile illness in rural Ghana.
+          Because conventional diagnostics failed and no close reference genome was initially available,
+          the researchers used whole-genome sequencing and de novo assembly. Illumina reads provided
+          many accurate short reads, but Assembly A was fragmented. Adding Nanopore long reads improved
+          the assembly by bridging gaps and resolving complex regions, producing Assembly B with fewer
+          contigs, higher N50, and higher coverage. The best strategy is hybrid de novo assembly,
+          followed by quality assessment, annotation, taxonomic classification, and careful comparison
+          with the later discovered 96% similar reference genome.
+        </p>
+      </div>
+    </section>
+
+    <!-- DEPLOYMENT -->
+    <section class="section" id="deployment">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Final Step</p>
+        <h2>How to Share the Website</h2>
+        <p>
+          This project is ready to open locally or upload to a free hosting platform.
+        </p>
+      </div>
+
+      <div class="deploy-grid">
+        <article class="deploy-card reveal">
+          <h3>Option 1: Share Locally</h3>
+          <p>
+            Zip the folder and send it to your mates. They only need to open <strong>index.html</strong>
+            in a browser.
+          </p>
+        </article>
+
+        <article class="deploy-card reveal">
+          <h3>Option 2: GitHub Pages</h3>
+          <p>
+            Upload the files to a GitHub repository, then enable Pages from the repository settings.
+            This gives you a public link.
+          </p>
+        </article>
+
+        <article class="deploy-card reveal">
+          <h3>Option 3: Netlify or Vercel</h3>
+          <p>
+            Drag the project folder into Netlify Drop or import it into Vercel. Since this is a static
+            website, deployment is simple.
+          </p>
+        </article>
+      </div>
+
+      <div class="speaker-script reveal">
+        <h3>Deployment File Included</h3>
+        <p>
+          Check <strong>DEPLOYMENT.md</strong> inside the ZIP for step-by-step publishing instructions.
+        </p>
+      </div>
+    </section>
+
+
+  </main>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
+
+  <footer class="footer">
+    <p>Group 2 Genome Reconstruction Hub • Molecular Medicine PBL</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
