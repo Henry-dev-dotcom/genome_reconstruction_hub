@@ -56,3 +56,7 @@ Use this as the final version for your group learning website.
 - Added `Genome_Reconstruction.mp4` to the website root.
 - Students can now watch the video directly on the website.
 - MP4 size: approximately 45.81 MB.
+
+## Video link update
+- Removed the highlighted explanatory video notes.
+- Added a direct YouTube link button below the video instructions.

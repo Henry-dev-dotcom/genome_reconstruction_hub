@@ -78,3 +78,13 @@ The site passed QA checks and is ready to use.
 - Broken internal/local links after self-hosted update: None found
 - CSS brace balance after self-hosted update: Passed
 - JavaScript syntax after self-hosted update: Passed
+
+
+## Video Link Update QA
+- Highlighted inline video note removed: Passed
+- Troubleshooting note removed: Passed
+- YouTube link added: Passed
+- Duplicate IDs after video link update: None found
+- Broken internal/local links after video link update: None found
+- CSS brace balance after video link update: Passed
+- JavaScript syntax after video link update: Passed

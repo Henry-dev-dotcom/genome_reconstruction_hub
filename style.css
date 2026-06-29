@@ -1157,6 +1157,12 @@ input {
   background: #000000;
 }
 
+
+.video-youtube-link {
+  margin-top: auto;
+  text-align: center;
+}
+
 @media print {
   body,
   body.dark-mode {
@@ -1262,6 +1268,12 @@ input {
   border: 0;
   object-fit: contain;
   background: #000000;
+}
+
+
+.video-youtube-link {
+  margin-top: auto;
+  text-align: center;
 }
 
 @media print {
