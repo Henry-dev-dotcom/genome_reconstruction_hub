@@ -38,3 +38,31 @@ QA review completed and fixes applied. The website is ready for group use.
 
 ### Final Status
 The site passed QA checks and is ready to use.
+
+
+## Video Update QA
+- Duplicate IDs after video update: None found
+- Broken internal/local links after video update: None found
+- CSS brace balance after video update: Passed
+- JavaScript syntax after video update: Passed
+- YouTube embed section added: Passed
+
+
+## Inline Video Update QA
+- Direct visible YouTube button removed: Passed
+- Embedded video retained: Passed
+- Duplicate IDs after inline video update: None found
+- Broken internal/local links after inline video update: None found
+- CSS brace balance after inline video update: Passed
+- JavaScript syntax after inline video update: Passed
+
+
+## YouTube Error 153 Embed Fix QA
+- Standard YouTube embed used: Passed
+- Referrer policy added: Passed
+- Explicit GitHub Pages origin added: Passed
+- Lazy loading removed from video iframe: Passed
+- Duplicate IDs after fix: None found
+- Broken internal/local links after fix: None found
+- CSS brace balance after fix: Passed
+- JavaScript syntax after fix: Passed

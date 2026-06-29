@@ -14,6 +14,12 @@ Genome Reconstruction of a Novel Emerging Pathogen.
 - QA_REPORT.md
 - README.md
 
+## New update
+- Added embedded YouTube teaching video section using the provided video link.
+- Added a responsive 16:9 video frame.
+- Added a direct YouTube fallback link.
+- Added study instructions beside the video.
+
 ## QA fixes applied
 - Reduced navbar to essential links to prevent desktop overflow.
 - Added responsive navigation breakpoint improvements.
@@ -33,3 +39,13 @@ Open `index.html` in your browser.
 
 ## Recommended use
 Use this as the final version for your group learning website.
+
+## Inline Video Update
+- Removed the direct YouTube button.
+- Students are now encouraged to watch the embedded video directly on the website.
+
+## YouTube Error 153 embed fix
+- Updated the video iframe with `referrerpolicy="strict-origin-when-cross-origin"`.
+- Added explicit GitHub Pages origin parameter.
+- Removed iframe lazy loading.
+- Added VIDEO_EMBED_FIX.md with a self-hosted MP4 fallback option.
