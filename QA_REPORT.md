@@ -66,3 +66,15 @@ The site passed QA checks and is ready to use.
 - Broken internal/local links after fix: None found
 - CSS brace balance after fix: Passed
 - JavaScript syntax after fix: Passed
+
+
+## Self-Hosted Video QA
+- YouTube iframe removed: Passed
+- HTML5 video player added: Passed
+- Local MP4 source linked: Passed
+- MP4 file included: Passed
+- MP4 file size: 45.81 MB
+- Duplicate IDs after self-hosted update: None found
+- Broken internal/local links after self-hosted update: None found
+- CSS brace balance after self-hosted update: Passed
+- JavaScript syntax after self-hosted update: Passed

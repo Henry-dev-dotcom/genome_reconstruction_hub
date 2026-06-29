@@ -1,35 +1,34 @@
-# Video Update Note
+# Self-Hosted Video Update
 
-A new "Study Video" section has been added to the website.
+The website now uses the uploaded MP4 video directly instead of a YouTube embed.
 
-## Added video
-YouTube link:
-https://youtu.be/d5BOxpQtrL0
+## Video file added
+`Genome_Reconstruction.mp4`
 
-## Embed used
-https://www.youtube-nocookie.com/embed/d5BOxpQtrL0
+## File size
+Approximately 45.81 MB
 
 ## Viewing behaviour
-The video is embedded directly inside the website so students can watch it on the learning page.
+Students can watch the video directly inside the website using the browser's built-in video player.
 
-## Important note
-The visible "Open on YouTube" button has been removed. Students can watch the video directly on the website.
-
-## Where it appears
-The video appears after the case section and before the learning pathway.
+## Why this update was made
+The YouTube embed showed Error 153 / video player configuration error. Using a local MP4 avoids that embed issue.
 
 ## Files changed
 - index.html
 - style.css
+- Genome_Reconstruction.mp4
 - README.md
-- VIDEO_UPDATE.md
+- QA_REPORT.md
 
 ## How to update GitHub
-Replace your repository files with the files in this updated folder, then commit and push.
+Replace your repository files with this updated version, then commit and push.
 
-Example:
 ```bash
 git add .
-git commit -m "Keep teaching video embedded on website"
+git commit -m "Use self-hosted study video"
 git push
 ```
+
+## Important GitHub note
+GitHub has file-size limits. If GitHub rejects the MP4 because it is too large, compress the video first or host it externally on a file/CDN service that supports direct MP4 playback.

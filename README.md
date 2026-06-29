@@ -49,3 +49,10 @@ Use this as the final version for your group learning website.
 - Added explicit GitHub Pages origin parameter.
 - Removed iframe lazy loading.
 - Added VIDEO_EMBED_FIX.md with a self-hosted MP4 fallback option.
+
+
+## Self-hosted video update
+- Replaced the YouTube iframe with a local HTML5 video player.
+- Added `Genome_Reconstruction.mp4` to the website root.
+- Students can now watch the video directly on the website.
+- MP4 size: approximately 45.81 MB.
